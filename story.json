@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "type": "normal",
+        "content": "สวัสดีแพนเค้ก",
+        "background": ".....",
+        "transition": "..."
+    },
+    {
+        "id": 2,
+        "type": "normal",
+        "content": "แพนเค้กเป็นคนธรรมดาคนนึง"
+    },
+    {
+        "id": 3,
+        "type": "normal",
+        "content": "lorem"
+    },
+    {
+        "id": 4,
+        "type": "normal",
+        "content": "มันคงถึงเวลาที่ทำให้"
+    }
+]

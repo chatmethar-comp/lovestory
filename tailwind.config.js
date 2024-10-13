@@ -9,7 +9,16 @@ export default {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        lovestory: {
+          200: "#FA97BF",
+          500: "#F875AA", // Default shade
+          600: "#BA5880",
+          700: "#7C3B55",
+        },
+      },
+    },
   },
   plugins: [],
 };

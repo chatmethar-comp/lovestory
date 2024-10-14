@@ -9,4 +9,14 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap'
+        }
+      ]
+    }
+  }
 });

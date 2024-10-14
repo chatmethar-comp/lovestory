@@ -32,6 +32,6 @@ export default {
     lineHeight: {
       'custom': '38.73px', // Custom line-height
     },
-  },
+      },
   plugins: [],
 };

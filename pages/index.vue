@@ -21,7 +21,7 @@
 
       <!-- Bottom Flower Image -->
       <div class="absolute bottom-0 w-full">
-        <img :src="flower" alt="Flower" class="w-fit h-auto"/>
+        <img :src="flower" alt="Flower" class="w-full h-auto"/>
       </div>
     </div>
   </div>

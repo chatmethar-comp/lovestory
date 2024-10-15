@@ -45,7 +45,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import StoryComponent from './StoryComponent.vue'; // Import the StoryComponent
+import { useRouter } from 'vue-router';
 
 // Correct password for comparison
 const correctPassword = '1290';
@@ -58,16 +58,14 @@ const input1 = ref(null);
 const input2 = ref(null);
 const input3 = ref(null);
 const input4 = ref(null);
-
-// Boolean to show the story when the correct password is entered
-const showStory = ref(false);
+const router = useRouter();
 
 // Function to check if all inputs are filled and if the password is correct
 const checkPassword = () => {
   const enteredPassword = inputValues.value.join('');
   if (enteredPassword === correctPassword) {
     console.log('Correct password!');
-    showStory.value = true; // Show the story
+    router.push('/envelope_animation'); // Navigate to story_page on success
   } else {
     console.log('Incorrect password.');
   }

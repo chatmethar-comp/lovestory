@@ -54,12 +54,14 @@ const input2 = ref(null);
 const input3 = ref(null);
 const input4 = ref(null);
 const router = useRouter();
+const filledpasscode = useCookie('filledpasscode', {maxAge: 60*15})
 
 // check if all inputs are filled and if the password is correct
 const checkPassword = () => {
   const enteredPassword = inputValues.value.join('');
   if (enteredPassword === correctPassword) {
     console.log('Correct password!');
+    filledpasscode.value = true;
     router.push('/envelope_animation');
   } else {
     console.log('Incorrect password.');

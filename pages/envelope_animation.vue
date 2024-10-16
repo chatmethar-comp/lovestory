@@ -24,6 +24,10 @@
   import envelope from '@/assets/images/envelope_open.png';
   import waxSeal from '@/assets/images/k_wax_seal.png';
   import flower from '@/assets/images/ripped_flower_01 1.png';
+
+  definePageMeta({
+    middleware: ['passcode']
+  })
   
   const router = useRouter();
   

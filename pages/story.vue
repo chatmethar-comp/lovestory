@@ -10,6 +10,10 @@
 <script setup>
 import storyPageBg from '../assets/images/story_page_bg.png';
 import StoryComponent from '../components/StoryComponent.vue';
+
+definePageMeta({
+  middleware: ['passcode']
+})
 </script>
 
 <style scoped>

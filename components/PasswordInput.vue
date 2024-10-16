@@ -39,33 +39,28 @@
       />
     </div>
   </div>
-  <!-- Conditionally show the story when the password is correct -->
-  <StoryComponent v-if="showStory" />
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-// Correct password for comparison
 const correctPassword = '1290';
 
-// Store the input values
 const inputValues = ref(['', '', '', '']);
 
-// Create refs for each input
 const input1 = ref(null);
 const input2 = ref(null);
 const input3 = ref(null);
 const input4 = ref(null);
 const router = useRouter();
 
-// Function to check if all inputs are filled and if the password is correct
+// check if all inputs are filled and if the password is correct
 const checkPassword = () => {
   const enteredPassword = inputValues.value.join('');
   if (enteredPassword === correctPassword) {
     console.log('Correct password!');
-    router.push('/envelope_animation'); // Navigate to story_page on success
+    router.push('/envelope_animation');
   } else {
     console.log('Incorrect password.');
   }
@@ -75,16 +70,13 @@ const checkPassword = () => {
 const moveFocus = (event, nextInput, prevInput) => {
   const value = event.target.value;
 
-  // Update inputValues array
   const currentIndex = [input1.value, input2.value, input3.value, input4.value].indexOf(event.target);
   inputValues.value[currentIndex] = value;
 
-  // Move focus to the next input if the current input has a value
   if (value && nextInput) {
     nextInput.focus();
   }
 
-  // Automatically check the password when all inputs are filled
   if (inputValues.value.every(val => val !== '')) {
     checkPassword();
   }
@@ -93,7 +85,6 @@ const moveFocus = (event, nextInput, prevInput) => {
 // Handle backspace key to move focus back
 const handleKeydown = (event, nextInput, prevInput) => {
   if (event.key === 'Backspace' && event.target.value === '') {
-    // Move focus to the previous input if the current input is empty
     if (prevInput) {
       prevInput.focus();
     }
@@ -102,5 +93,5 @@ const handleKeydown = (event, nextInput, prevInput) => {
 </script>
 
 <style scoped>
-/* Add any additional styles if needed */
+/*  */
 </style>

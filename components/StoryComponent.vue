@@ -10,7 +10,7 @@
   
   <script setup>
   import { ref, onMounted } from 'vue';
-  import storyData from '../story.json'; // Adjust the path as necessary
+  import storyData from '../story.json';
   
   // State to manage story progression
   const currentIndex = ref(0);

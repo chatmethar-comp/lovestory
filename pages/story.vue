@@ -8,10 +8,10 @@
 </template>
 
 <script setup>
-import storyPageBg from '../assets/images/story_page_bg.png'; // Import the background image
-import StoryComponent from '../components/StoryComponent.vue'; // Reuse StoryComponent for story display
+import storyPageBg from '../assets/images/story_page_bg.png';
+import StoryComponent from '../components/StoryComponent.vue';
 </script>
 
 <style scoped>
-/* You can adjust any additional styles here if needed */
+
 </style>

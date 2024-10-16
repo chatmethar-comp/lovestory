@@ -35,5 +35,5 @@ import flower from '@/assets/images/ripped_flower_01 1.png';
 </script>
 
 <style scoped>
-/* You may not need additional styles if everything is handled by Tailwind */
+/*  */
 </style>

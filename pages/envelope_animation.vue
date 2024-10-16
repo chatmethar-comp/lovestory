@@ -21,7 +21,7 @@
   import { onMounted } from 'vue';
   import { useRouter } from 'vue-router';
   
-  import envelope from '@/assets/images/envelope_open.png'; // updated to open envelope
+  import envelope from '@/assets/images/envelope_open.png';
   import waxSeal from '@/assets/images/k_wax_seal.png';
   import flower from '@/assets/images/ripped_flower_01 1.png';
   
@@ -29,8 +29,8 @@
   
   onMounted(() => {
     setTimeout(() => {
-      router.push('/story_page'); // Redirect to story_page.vue after 5 seconds
-    }, 5000); // 5 second delay
+      router.push('/story');
+    }, 5000);
   });
   </script>
   

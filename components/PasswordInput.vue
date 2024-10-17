@@ -86,7 +86,7 @@ const checkPassword = () => {
 };
 
 // Dynamically set the class based on the error status
-const inputClass = (index) => {
+const inputClass = () => {
   return `w-12 h-16 border-2 ${inputError.value ? 'border-red-500' : 'border-lovestory-500'} rounded-md text-center text-2xl`;
 };
 

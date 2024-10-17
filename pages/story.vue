@@ -27,9 +27,13 @@ onMounted(() => {
   currentContent.value = storyDataWithId[currentIndex.value];
 });
 
-function nextStory() {
+const nextStory = () => {
   currentIndex.value = (currentIndex.value + 1);
-  currentContent.value = storyDataWithId[currentIndex.value];
+  if (currentIndex.value == storyDataWithId.length) {
+    navigateTo('/confess')
+  } else {
+    currentContent.value = storyDataWithId[currentIndex.value];
+  }
 }
 </script>
 

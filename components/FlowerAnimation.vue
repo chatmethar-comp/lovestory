@@ -1,5 +1,5 @@
 <template>
-  <div class="not-loaded">
+  <div>
   <div class="night"></div>
   <div class="flowers">
     <div class="flower flower--1">
@@ -312,14 +312,14 @@
 </script> -->
 
 <script setup>
-import { onMounted } from 'vue';
+// import { onMounted } from 'vue';
 
-onMounted(() => {
-  const c = setTimeout(() => {
-    document.body.classList.remove("not-loaded");
-    clearTimeout(c);
-  }, 1000);
-});
+// onMounted(() => {
+//   const c = setTimeout(() => {
+//     document.body.classList.remove("not-loaded");
+//     clearTimeout(c);
+//   }, 1000);
+// });
 </script>
 
 <style lang="scss">

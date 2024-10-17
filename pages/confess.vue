@@ -1,10 +1,12 @@
 <template>
     <div>
-        confession
+      <FlowerAnimation />
     </div>
 </template>
 
 <script setup>
+import FlowerAnimation from '~/components/FlowerAnimation.vue';
+
 definePageMeta({
   middleware: ['passcode']
 })

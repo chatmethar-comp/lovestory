@@ -14,7 +14,7 @@
       <input 
         type="text" 
         maxlength="1" 
-        :class="inputClass(1)"
+        :class="inputClass()"
         placeholder="D"
         ref="input2"
         v-model="inputValues[1]"
@@ -24,7 +24,7 @@
       <input 
         type="text" 
         maxlength="1" 
-        :class="inputClass(2)"
+        :class="inputClass()"
         placeholder="M"
         ref="input3"
         v-model="inputValues[2]"
@@ -34,7 +34,7 @@
       <input 
         type="text" 
         maxlength="1" 
-        :class="inputClass(3)"
+        :class="inputClass()"
         placeholder="M"
         ref="input4"
         v-model="inputValues[3]"

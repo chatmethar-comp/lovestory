@@ -1,41 +1,20 @@
 <template>
-  <div class="w-full h-44">
+  <div class="w-full h-44" >
     <div class="story-container relative items-center justify-center p-4">
       <transition name="fade" mode="out-in">
-        <div :key="currentIndex" class="story-content font-kanit text-2xl">{{ currentContent }}</div>
+        <div :key="content.id" class="story-content font-kanit text-2xl">{{ content.content }}</div>
       </transition>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import storyData from '../story.json';
-
-const currentIndex = ref(0);
-const currentContent = ref('');
-
-// Load story data and start displaying it
-onMounted(() => {
-  displayStory();
-});
-
-// Function to update the content based on current index
-const displayStory = () => {
-  const storyItem = storyData[currentIndex.value]; // Use imported storyData
-
-  if (storyItem && storyItem.type === "normal") {
-    currentContent.value = storyItem.content;
-
-    // Move to the next story item after a delay (e.g., 2 seconds)
-    setTimeout(() => {
-      if (currentIndex.value < storyData.length - 1) {
-        currentIndex.value++;
-        displayStory();
-      }
-    }, 4000); // Adjust timing as needed
+const props = defineProps({
+  content: {
+    type: Object,
+    required: true
   }
-};
+});
 </script>
 
 <style scoped>

@@ -4,7 +4,7 @@
       <input 
         type="text" 
         maxlength="1" 
-        :class="inputClass(0)"
+        :class="inputClass()"
         placeholder="D"
         ref="input1"
         v-model="inputValues[0]"

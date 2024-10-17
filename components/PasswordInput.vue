@@ -4,7 +4,7 @@
       <input 
         type="text" 
         maxlength="1" 
-        :class="inputClass(0)"
+        :class="inputClass()"
         placeholder="D"
         ref="input1"
         v-model="inputValues[0]"
@@ -14,7 +14,7 @@
       <input 
         type="text" 
         maxlength="1" 
-        :class="inputClass(1)"
+        :class="inputClass()"
         placeholder="D"
         ref="input2"
         v-model="inputValues[1]"
@@ -24,7 +24,7 @@
       <input 
         type="text" 
         maxlength="1" 
-        :class="inputClass(2)"
+        :class="inputClass()"
         placeholder="M"
         ref="input3"
         v-model="inputValues[2]"
@@ -34,7 +34,7 @@
       <input 
         type="text" 
         maxlength="1" 
-        :class="inputClass(3)"
+        :class="inputClass()"
         placeholder="M"
         ref="input4"
         v-model="inputValues[3]"
@@ -86,7 +86,7 @@ const checkPassword = () => {
 };
 
 // Dynamically set the class based on the error status
-const inputClass = (index) => {
+const inputClass = () => {
   return `w-12 h-16 border-2 ${inputError.value ? 'border-red-500' : 'border-lovestory-500'} rounded-md text-center text-2xl`;
 };
 

@@ -44,7 +44,7 @@
     </div>
 
     <!-- Warning text for incorrect password -->
-    <div v-if="showWarning" class="text-red-500 text-sm mt-2">Incorrect passcode, please try again.</div>
+    <div v-if="showWarning" class="text-red-500 text-sm absolute">Incorrect passcode, please try again.</div>
   </div>
 </template>
 

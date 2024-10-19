@@ -1,6 +1,9 @@
 <template>
   <div class="bg-white h-screen" @click="nextStory">
-    <div class="flex flex-col items-center justify-center min-h-screen max-w-md mx-auto relative" :style="{ backgroundImage: `url(${storyPageBg})` }">
+    <div 
+      class="flex flex-col items-center justify-center min-h-screen max-w-md mx-auto relative bg-cover bg-center" 
+      :style="{ backgroundImage: `url(${storyPageBg})` }"
+    >
       <StoryComponent :content="currentContent" class="p-6"/>
     </div>
   </div>

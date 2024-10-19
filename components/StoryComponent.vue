@@ -2,7 +2,7 @@
   <div class="w-full h-44" >
     <div class="story-container relative items-center justify-center p-4">
       <transition name="fade" mode="out-in">
-        <div :key="content.id" class="story-content font-kanit text-2xl">{{ content.content }}</div>
+        <div :key="content.id" class="story-content font-kanit text-lg">{{ content.content }}</div>
       </transition>
     </div>
   </div>
@@ -23,11 +23,6 @@ const props = defineProps({
   margin-top: 2rem;
 }
 
-.story-content {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  opacity: 0.9;
-}
   
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s ease;

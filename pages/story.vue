@@ -1,13 +1,15 @@
 <template>
   <div class="bg-white h-screen" @click="nextStory">
-    <div class="flex flex-col items-center justify-center min-h-screen max-w-md mx-auto relative" :style="{ backgroundImage: `url(${storyPageBg})` }">
+    <div 
+      class="flex flex-col items-center justify-center min-h-screen max-w-md mx-auto relative bg-cover bg-center" 
+      :style="{ backgroundImage: `url(${storyPageBg})` }"
+    >
       <StoryComponent :content="currentContent" class="p-6"/>
     </div>
   </div>
 </template>
 
 <script setup>
-import storyPageBg from '../assets/images/story_page_bg.png';
 import StoryComponent from '../components/StoryComponent.vue';
 import storyData from '@/story.json';
 
@@ -22,9 +24,11 @@ const storyDataWithId = storyData.map((item, index) => ({
 
 const currentIndex = ref(0);
 const currentContent = ref(storyDataWithId[currentIndex.value]);
+const storyPageBg = ref('');
 
 onMounted(() => {
   currentContent.value = storyDataWithId[currentIndex.value];
+  updateBackground();
 });
 
 const nextStory = () => {
@@ -33,8 +37,20 @@ const nextStory = () => {
     navigateTo('/confess')
   } else {
     currentContent.value = storyDataWithId[currentIndex.value];
+    updateBackground();
   }
 }
+
+const updateBackground = () => {
+  // not sure if directly hardcode `_nuxt/` is a correct standard 
+  // this just check if background field is not empty
+  // TODO: handle the if that file doesn't exist
+  if(currentContent.value.background){
+    storyPageBg.value = `/_nuxt/assets/images/story_bg/${currentContent.value.background}`;
+  } else {
+    storyPageBg.value = `/_nuxt/assets/images/story_bg/story_default.png`;
+  }
+};
 </script>
 
 <style scoped>

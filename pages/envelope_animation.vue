@@ -34,7 +34,7 @@
   onMounted(() => {
     setTimeout(() => {
       router.push('/story');
-    }, 5000);
+    }, 2500);
   });
   </script>
   

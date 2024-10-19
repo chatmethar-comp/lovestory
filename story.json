@@ -57,6 +57,7 @@
     {
         "type": "normal",
         "content": "เค้ารู้สึกใจดีทุกครั้งที่เราได้คุยกัน",
+        "background": "story_default.png",
         "quote": {
             "th": "ถ้าเธอเคยมาตอนบ่ายสี่โมง ประมาณบ่ายสามโมง ฉันก็จะเริ่มมีความสุข",
             "en": "you came at four o'clock in the afternoon, then at three o'clock I shall begin to be happy",

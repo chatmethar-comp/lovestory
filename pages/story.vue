@@ -42,7 +42,14 @@ const nextStory = () => {
 }
 
 const updateBackground = () => {
-  storyPageBg.value = `/_nuxt/assets/images/story_bg/${currentContent.value.background}`;
+  // not sure if directly hardcode `_nuxt/` is a correct standard 
+  // this just check if background field is not empty
+  // TODO: handle the if that file doesn't exist
+  if(currentContent.value.background){
+    storyPageBg.value = `/_nuxt/assets/images/story_bg/${currentContent.value.background}`;
+  } else {
+    storyPageBg.value = `/_nuxt/assets/images/story_bg/story_default.png`;
+  }
 };
 </script>
 

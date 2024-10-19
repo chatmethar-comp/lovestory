@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import storyPageBg from '../assets/images/story_page_bg.png';
+import storyPageBg from '@/assets/images/story_bg/story_default.png';
 import StoryComponent from '../components/StoryComponent.vue';
 import storyData from '@/story.json';
 

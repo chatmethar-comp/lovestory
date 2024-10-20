@@ -73,3 +73,13 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Docker
+
+```bash
+# build
+docker build -t lovestory/demoapp:latest . 
+
+# run
+docker run -p 3000:3000 lovestory/demoapp:latest
+```

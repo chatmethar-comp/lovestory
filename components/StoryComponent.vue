@@ -1,8 +1,8 @@
 <template>
-  <div class="w-full h-44" >
-    <div class="story-container relative items-center justify-center p-4">
+  <div class="w-full h-44">
+    <div class="story-container relative p-4">
       <transition name="fade" mode="out-in">
-        <div :key="content.id" class="story-content font-kanit text-lg">{{ content.content }}</div>
+        <div :key="content.id" class="story-content font-kanit text-lg" v-html="content.content"></div>
       </transition>
     </div>
   </div>
@@ -19,11 +19,14 @@ const props = defineProps({
 
 <style scoped>
 .story-container {
+  display: flex;
   text-align: center;
-  margin-top: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-  
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s ease;
 }

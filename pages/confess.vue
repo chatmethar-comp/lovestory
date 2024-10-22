@@ -9,7 +9,7 @@
     <!-- Animated Text -->
     <div v-if="showText" class="confession-text transform translate-y-[-350%]">
       <transition name="fade">
-        <p :class="[isJapanese(currentText) ? 'font-kosugi' : 'font-kanit', 'text-5xl', 'text-white']">{{ currentText }}</p>
+        <p :class="getFontClass(currentText.language)">{{ currentText.value }}</p>
       </transition>
     </div>
   </div>
@@ -19,18 +19,28 @@
 import { ref, onMounted } from 'vue';
 import FlowerAnimation from '~/components/FlowerAnimation.vue';
 
+definePageMeta({
+  middleware: ['passcode']
+})
+
 const texts = [
-  "I love you",
-  "ฉันรักเธอ",
-  "愛してる",
-  "Je t'aime"
+  { language: "en", value: "I love you" },
+  { language: "th", value: "ฉันรักเธอ" },
+  { language: "jp", value: "愛してる" },
+  { language: "fr", value: "Je t'aime" }
 ];
 
 const currentText = ref(texts[0]);
 const showText = ref(false);
 
-const isJapanese = (text) => /[\u3040-\u30ff\u4e00-\u9faf]/.test(text);
-
+const getFontClass = (language) => {
+  switch (language) {
+    case 'jp':
+      return 'font-kosugi text-5xl text-white';
+    default:
+      return 'font-kanit text-5xl text-white';
+  }
+};
 onMounted(() => {
   setTimeout(() => {
     showText.value = true;

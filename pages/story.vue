@@ -2,14 +2,17 @@
   <div class="bg-white h-screen" @click="nextStory">
     <div 
       class="flex flex-col items-center justify-center min-h-screen max-w-md mx-auto relative bg-cover bg-center" 
-      :style="{ backgroundImage: `url(${storyPageBg})` }"
+      :style="{ backgroundImage: currentContent ? `url(/images/story_bg/${currentContent.background || 'story_default.png'})` : '' }"
     >
-      <StoryComponent :content="currentContent" class="p-6"/>
+      <div class="flex flex-col justify-center items-center h-full">
+        <StoryComponent v-if="currentContent" :content="currentContent" class="p-6"/>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
 import StoryComponent from '../components/StoryComponent.vue';
 import storyData from '@/story.json';
 
@@ -23,8 +26,7 @@ const storyDataWithId = storyData.map((item, index) => ({
 }));
 
 const currentIndex = ref(0);
-const currentContent = ref(storyDataWithId[currentIndex.value]);
-const storyPageBg = ref('');
+const currentContent = ref(null);const storyPageBg = ref('');
 
 onMounted(() => {
   currentContent.value = storyDataWithId[currentIndex.value];

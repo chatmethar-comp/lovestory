@@ -28,6 +28,7 @@ export default {
     },
     fontFamily: {
       kanit: ['Kanit', 'sans-serif'], // Adding Kanit font
+      kosugi: ['Kosugi Maru', 'sans-serif'],
     },    
     lineHeight: {
       'custom': '38.73px', // Custom line-height

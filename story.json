@@ -2,32 +2,92 @@
     {
         "type": "normal",
         "content": "สวัสดีแพนเค้ก<br>เป็นยังไงบ้าง<br>",
-        "background": "story_default.png"
+        "background": "story_default.png",
+        "decoration": []
+
     },
     {
         "type": "normal",
         "content": "เค้าเจอเด็กผู้หญิงคนนึงจากงานแข่ง<br>ถึงในงานเราก็ไม่ได้คุยกันมาก",
-        "background": "story_rapunzel.png"
+        "background": "story_default.png",
+        "decoration": [
+            {
+                "src": "book.png",
+                "position": {
+                    "bottom": 0,
+                    "left": 0
+                }
+            },
+            {
+                "src": "girl_drawing_1.png",
+                "position": {
+                    "bottom": 0,
+                    "right": 0
+                }
+            },
+            {
+                "src": "keyboard_work.png",
+                "position": {
+                    "top": 0,
+                    "left": 0
+                }
+            }
+        ]
     },
     {
         "type": "normal",
         "content": "แต่แล้วเราก็รู้จักกันมากขึ้นเรื่อยๆ",
-        "background": "story_rapunzel.png"
+        "background": "story_default.png",
+        "decoration": [
+            {
+                "src": "rabbit_river.png",
+                "position": {
+                    "bottom": 0,
+                    "right": 0
+                }
+            },
+            {
+                "src": "rapunzel_1.png",
+                "position": {
+                    "bottom": 0,
+                    "left": 0
+                }
+            },
+            {
+                "src": "star_1.png",
+                "position": {
+                    "top": 121,
+                    "left": 120
+                }
+            }
+        ]
+
     },
     {
         "type": "normal",
         "content": "ไปแข่งด้วยกันเรื่อยๆ",
-        "background": "story_default.png"
+        "background": "story_default.png",
+        "decoration": [
+            {
+                "src": "rapunzel_2.png",
+                "position": {
+                    "bottom": 0,
+                    "horizontal": "center"
+                }
+            }
+        ]
     },
     {
         "type": "normal",
         "content": "เค้ารู้สึกสบายใจเวลาที่เราอยู่ด้วยกัน",
-        "background": "story_default.png"
+        "background": "story_default.png",
+        "decoration": []
     },
     {
         "type": "normal",
         "content": "รู้สึกดีใจทุกครั้งที่เราได้คุยกัน",
         "background": "story_default.png",
+        "decoration": [],
         "quote": {
             "th": "ถ้าเธอเคยมาตอนบ่ายสี่โมง ประมาณบ่ายสามโมง ฉันก็จะเริ่มมีความสุข",
             "en": "you came at four o'clock in the afternoon, then at three o'clock I shall begin to be happy",
@@ -37,22 +97,68 @@
     {
         "type": "normal",
         "content": "แพนเค้กเป็น supporter ที่ดีมากๆ<br>เป็นผู้สร้างกำลังใจให้เค้ามาตลอด",
-        "background": "story_default.png"
+        "background": "story_default.png",
+        "decoration": [
+            {
+                "src": "knight_cat.png",
+                "position": {
+                    "right": -50,
+                    "bttom": -60
+                },
+                "scale": 1.25
+            }
+        ]
     },
     {
         "type": "normal",
         "content": "เวลาเค้าเจอวันแย่ๆมา<br>แค่ได้คุยกับแพนเค้กก็รู้สึกว่า<br>วันนั้นกลายเป็นวันที่สดใสขึ้นมาทันที",
-        "background": "story_default.png"
+        "background": "story_default.png",
+        "decoration": [
+            {
+                "src": "knight_cat.png",
+                "position": {
+                    "right": 0,
+                    "bttom": 18
+                }
+            },
+            {
+                "src": "night.png",
+                "position": {
+                    "top": 0,
+                    "width": "full"
+                },
+                "transition_from": "slide_top",
+                "transition_to": "slide_top"
+            }
+        ]
     },
     {
         "type": "normal",
         "content": "ถึงจริงๆ แพนเค้กเป็นเพียง<br>เด็กผู้หญิงตัวเล็กๆธรรมดาคนนึง<br>เหมือนกับเด็กหญิงคนอื่นๆทั่วไป​<br>ไม่ได้พิเศษกว่าใคร",
-        "background": "story_default.png"
+        "background": "story_default.png",
+        "decoration": []
     },
+    {
+        "type": "decoration",
+        "content": "",
+        "background": "story_default.png",
+        "decoration": [
+            {
+                "src": "sun.png",
+                "position": {
+                    "top": 0,
+                    "width": "full"
+                },
+                "transition_from": "slide_top",
+                "transition_to": "slide_top"
+            }
+        ]
+    }
     {
         "type": "normal",
         "content": "ไม่ได้ดูน่ารักกว่าหรือเก่งกว่าคนอื่น",
-        "background": "story_default.png"
+        "background": "story_default.png",
+        "decoration": []
     },
     {
         "type": "normal",

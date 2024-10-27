@@ -103,7 +103,7 @@
                 "src": "knight_cat.png",
                 "position": {
                     "right": -50,
-                    "bttom": -60
+                    "bottom": -60
                 },
                 "scale": 1.25
             }
@@ -118,8 +118,9 @@
                 "src": "knight_cat.png",
                 "position": {
                     "right": 0,
-                    "bttom": 18
-                }
+                    "bottom": 18
+                },
+                "scale": 1.25
             },
             {
                 "src": "night.png",

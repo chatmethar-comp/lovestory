@@ -1,6 +1,6 @@
 <template>
     <div class="bg-white h-screen">
-      <div class="flex flex-col items-center justify-center min-h-screen bg-softpink max-w-md mx-auto relative fade-in-animation">
+      <div class="flex flex-col items-center justify-center min-h-screen bg-softpink max-w-screen-sm mx-auto relative fade-in-animation">
         <!-- Envelope Image Section -->
         <div class="mb-52">
           <div class="relative w-fit h-auto">

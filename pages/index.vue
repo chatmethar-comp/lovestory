@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white h-screen">
-    <div class="flex flex-col items-center justify-center min-h-screen bg-softpink max-w-md mx-auto relative">
+    <div class="flex flex-col items-center justify-center min-h-screen bg-softpink max-w-screen-sm mx-auto relative">
       <!-- Top Section: Title -->
       <div class="text-center mb-6">
         <h1 class="font-kanit text-4xl font-semibold text-lovestory-700 mb-2 leading-custom">โปรดใส่รหัสผ่าน</h1>        

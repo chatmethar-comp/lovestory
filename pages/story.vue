@@ -8,23 +8,14 @@
         <StoryComponent v-if="currentContent" :content="currentContent" class="p-6" />
       </div>
 
-      <!-- Loop through decorations and add classes for animations -->
+      <!-- Loop through decorations and add classes for animations dynamically based on src -->
       <div
         v-if="currentContent && currentContent.decoration"
         v-for="(decoration, index) in currentContent.decoration"
         :key="index"
         :style="getDecorationStyle(decoration)"
         class="absolute decoration"
-        :class="{
-          'animate-book': decoration.src === 'book.png',
-          'animate-girl': decoration.src === 'girl_drawing_1.png',
-          'animate-keyboard': decoration.src === 'keyboard_work.png',
-          'animate-rabbit': decoration.src === 'rabbit_river.png',
-          'animate-rapunzel': decoration.src === 'rapunzel_1.png',
-          'animate-star': decoration.src === 'star_1.png',
-          'animate-night': decoration.src === 'night.png',
-          'animate-sun': decoration.src === 'sun.png'
-        }"
+        :class="`animate-${decoration.src.split('.')[0]}`"
       >
         <img :src="`/images/decoration/${decoration.src}`" :alt="decoration.src" />
       </div>
@@ -32,6 +23,7 @@
     <BGMusic />
   </div>
 </template>
+
 <script setup>
 import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue';
 import gsap from 'gsap';
@@ -66,99 +58,57 @@ const nextStory = () => {
   currentContent.value = storyDataWithId[currentIndex.value];
 };
 
+// Reusable function to animate elements in from a specified direction
+const animateInFrom = (element, direction) => {
+  const startPosition = { opacity: 0 };
+  if (direction === 'top') startPosition.y = -200;
+  if (direction === 'bottom') startPosition.y = 200;
+  if (direction === 'left') startPosition.x = -200;
+  if (direction === 'right') startPosition.x = 200;
+
+  gsap.fromTo(
+    element,
+    startPosition,
+    { x: 0, y: 0, opacity: 1, duration: 1, ease: 'power2.out' }
+  );
+};
+
+// Reusable function to animate elements out to a specified direction
+const animateOutTo = (element, direction) => {
+  const endPosition = { opacity: 0 };
+  if (direction === 'top') endPosition.y = -200;
+  if (direction === 'bottom') endPosition.y = 200;
+  if (direction === 'left') endPosition.x = -200;
+  if (direction === 'right') endPosition.x = 200;
+
+  return gsap.to(element, { ...endPosition, duration: 1, ease: 'power2.in' });
+};
+
 // Entrance Animation
 const animateDecorationsIn = async () => {
   await nextTick(); // Ensure DOM updates
 
-  // Target elements by their classes
-  const bookEl = document.querySelector('.animate-book');
-  const girlEl = document.querySelector('.animate-girl');
-  const keyboardEl = document.querySelector('.animate-keyboard');
-  const rabbitEl = document.querySelector('.animate-rabbit');
-  const rapunzelEl = document.querySelector('.animate-rapunzel');
-  const starEl = document.querySelector('.animate-star');
-  const nightEl = document.querySelector('.animate-night');
-  const sunEl = document.querySelector('.animate-sun');
-
-  if (bookEl) {
-    gsap.fromTo(bookEl, { y: 200, opacity: 0 }, { y: 30, opacity: 1, duration: 1, ease: "power2.out" });
-  }
-
-  if (girlEl) {
-    gsap.fromTo(girlEl, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1, ease: "power2.out" });
-  }
-
-  if (keyboardEl) {
-    gsap.fromTo(keyboardEl, { y: -200, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" });
-  }
-  
-  if (rabbitEl) {
-    gsap.fromTo(rabbitEl, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1, ease: "power2.out" });
-  }
-
-  if (rapunzelEl) {
-    gsap.fromTo(rapunzelEl, { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 1, ease: "power2.out" });
-  }
-
-  if (starEl) {
-    gsap.fromTo(starEl, { y: -200, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" });
-  }
-
-  if (nightEl) {
-    gsap.fromTo(nightEl, { y: -200, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" });
-  }
-
-  if (sunEl) {
-    gsap.fromTo(sunEl, { y: -200, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" });
-  }
+  currentContent.value.decoration.forEach((decoration) => {
+    const element = document.querySelector(`.animate-${decoration.src.split('.')[0]}`);
+    if (element) {
+      const direction = decoration.animation?.in || 'bottom'; // Default to 'bottom' if not specified
+      animateInFrom(element, direction);
+    }
+  });
 };
 
 // Exit Animation
 const animateDecorationsOut = () => {
   return new Promise((resolve) => {
-    // Target elements by their classes
-    const bookEl = document.querySelector('.animate-book');
-    const girlEl = document.querySelector('.animate-girl');
-    const keyboardEl = document.querySelector('.animate-keyboard');
-    const rabbitEl = document.querySelector('.animate-rabbit');
-    const rapunzelEl = document.querySelector('.animate-rapunzel');
-    const starEl = document.querySelector('.animate-star');
-    const nightEl = document.querySelector('.animate-night');
-    const sunEl = document.querySelector('.animate-sun');
+    const timeline = gsap.timeline({ onComplete: resolve });
 
-    const timeline = gsap.timeline({ onComplete: resolve }); // Resolve after animation completes
-
-    if (bookEl) {
-      timeline.to(bookEl, { y: 200, opacity: 0, duration: 1, ease: "power2.in" });
-    }
-
-    if (girlEl) {
-      timeline.to(girlEl, { x: 200, opacity: 0, duration: 1, ease: "power2.in" }, "<"); // "<" for simultaneous animation
-    }
-
-    if (keyboardEl) {
-      timeline.to(keyboardEl, { y: -200, opacity: 0, duration: 1, ease: "power2.in" }, "<");
-    }
-    
-    if (rabbitEl) {
-      timeline.to(rabbitEl, { x: 200, opacity: 0, duration: 1, ease: "power2.in" }, "<");
-    }
-
-    if (rapunzelEl) {
-      timeline.to(rapunzelEl, { x: -200, opacity: 0, duration: 1, ease: "power2.in" }, "<");
-    }
-
-    if (starEl) {
-      timeline.to(starEl, { y: -200, opacity: 0, duration: 1, ease: "power2.in" }, "<");
-    }
-
-    if (nightEl) {
-      timeline.to(nightEl, { y: -200, opacity: 0, duration: 1, ease: "power2.in" }, "<");
-    }
-
-    if (sunEl) {
-      timeline.to(sunEl, { y: -200, opacity: 0, duration: 1, ease: "power2.in" }, "<");
-    }
+    currentContent.value.decoration.forEach((decoration) => {
+      const element = document.querySelector(`.animate-${decoration.src.split('.')[0]}`);
+      if (element) {
+        const direction = decoration.animation?.out || 'bottom'; // Default to 'bottom' if not specified
+        timeline.add(animateOutTo(element, direction), '<');
+      }
+    });
   });
 };
 

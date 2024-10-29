@@ -4,7 +4,6 @@
         "content": "สวัสดีแพนเค้ก<br>เป็นยังไงบ้าง<br>",
         "background": "story_default.png",
         "decoration": []
-
     },
     {
         "type": "normal",
@@ -14,8 +13,12 @@
             {
                 "src": "book.png",
                 "position": {
-                    "bottom": 0,
+                    "bottom": -30,
                     "left": 0
+                },
+                "animation": {
+                    "in": "bottom",
+                    "out": "bottom"
                 }
             },
             {
@@ -23,6 +26,10 @@
                 "position": {
                     "bottom": 0,
                     "right": 0
+                },
+                "animation": {
+                    "in": "right",
+                    "out": "right"
                 }
             },
             {
@@ -30,6 +37,10 @@
                 "position": {
                     "top": 0,
                     "left": 0
+                },
+                "animation": {
+                    "in": "left",
+                    "out": "top"
                 }
             }
         ]
@@ -43,7 +54,11 @@
                 "src": "rabbit_river.png",
                 "position": {
                     "bottom": 0,
-                    "right": 0
+                    "right": -90
+                },
+                "animation": {
+                    "in": "right",
+                    "out": "bottom"
                 }
             },
             {
@@ -51,6 +66,10 @@
                 "position": {
                     "bottom": 0,
                     "left": 0
+                },
+                "animation": {
+                    "in": "left",
+                    "out": "bottom"
                 }
             },
             {
@@ -59,9 +78,13 @@
                     "top": 121,
                     "left": 120
                 }
+                ,
+                "animation": {
+                    "in": "top",
+                    "out": "top"
+                }
             }
         ]
-
     },
     {
         "type": "normal",
@@ -73,6 +96,10 @@
                 "position": {
                     "bottom": 0,
                     "horizontal": "center"
+                },
+                "animation": {
+                    "in": "right",
+                    "out": "bottom"
                 }
             }
         ]
@@ -106,6 +133,11 @@
                     "bottom": -60
                 },
                 "scale": 1.25
+                ,
+                "animation": {
+                    "in": "right",
+                    "out": "bottom"
+                }
             }
         ]
     },
@@ -118,9 +150,14 @@
                 "src": "knight_cat.png",
                 "position": {
                     "right": 0,
-                    "bottom": 18
+                    "bottom": 5
                 },
-                "scale": 1.25
+                "scale": 0.75
+                ,
+                "animation": {
+                    "in": "right",
+                    "out": "bottom"
+                }
             },
             {
                 "src": "night.png",
@@ -128,8 +165,10 @@
                     "top": 0,
                     "width": "full"
                 },
-                "transition_from": "slide_top",
-                "transition_to": "slide_top"
+                "animation": {
+                    "in": "top",
+                    "out": "top"
+                }
             }
         ]
     },
@@ -144,8 +183,10 @@
                     "top": 0,
                     "width": "full"
                 },
-                "transition_from": "slide_top",
-                "transition_to": "slide_top"
+                "animation": {
+                    "in": "top",
+                    "out": "top"
+                }
             }
         ]
     },

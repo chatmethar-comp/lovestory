@@ -3,8 +3,22 @@
         "type": "normal",
         "content": "สวัสดีแพนเค้ก<br>เป็นยังไงบ้าง<br>",
         "background": "story_default.png",
-        "decoration": []
-
+        "decoration": [
+            {
+                "src": "bl-flower-garden.png",
+                "position": {
+                    "bottom": 0,
+                    "left": 0
+                }
+            },
+            {
+                "src": "bl-flower-garden.png",
+                "position": {
+                    "bottom": 0,
+                    "left": 0
+                }
+            }
+        ]
     },
     {
         "type": "normal",

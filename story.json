@@ -134,12 +134,6 @@
         ]
     },
     {
-        "type": "normal",
-        "content": "ถึงจริงๆ แพนเค้กเป็นเพียง<br>เด็กผู้หญิงตัวเล็กๆธรรมดาคนนึง<br>เหมือนกับเด็กหญิงคนอื่นๆทั่วไป​<br>ไม่ได้พิเศษกว่าใคร",
-        "background": "story_default.png",
-        "decoration": []
-    },
-    {
         "type": "decoration",
         "content": "",
         "background": "story_default.png",
@@ -154,6 +148,12 @@
                 "transition_to": "slide_top"
             }
         ]
+    },
+    {
+        "type": "normal",
+        "content": "ถึงจริงๆ แพนเค้กเป็นเพียง<br>เด็กผู้หญิงตัวเล็กๆธรรมดาคนนึง<br>เหมือนกับเด็กหญิงคนอื่นๆทั่วไป​<br>ไม่ได้พิเศษกว่าใคร",
+        "background": "story_default.png",
+        "decoration": []
     },
     {
         "type": "normal",

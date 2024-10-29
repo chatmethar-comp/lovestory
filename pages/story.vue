@@ -20,6 +20,7 @@
         </div>
     </div>
   </div>
+  <BGMusic />
 </template>
 
 <script setup>
@@ -41,6 +42,9 @@ const currentContent = ref(null);const storyPageBg = ref('');
 
 onMounted(() => {
   currentContent.value = storyDataWithId[currentIndex.value];
+  window.onbeforeunload = () => {
+    return "ต้องการออกจากหน้านี้จริงๆหรอ";
+  };
 });
 
 const nextStory = () => {
@@ -59,6 +63,10 @@ const getDecorationStyle = (decoration) => {
   if (decoration.position.width === 'full') style.width = '100%';
   return style;
 };
+
+onBeforeUnmount(() => {
+  window.onbeforeunload = null; // Clean up the event listener
+});
 </script>
 
 <style scoped>

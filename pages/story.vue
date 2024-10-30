@@ -1,32 +1,32 @@
 <template>
-  <div class="bg-white h-screen" @click="nextStory">
-    <div 
-      class="flex flex-col items-center justify-center min-h-screen max-w-screen-sm mx-auto relative bg-cover bg-center overflow-hidden" 
+  <div class="bg-white h-screen" @click="handleStoryClick">
+    <div
+      class="flex flex-col items-center justify-center min-h-screen max-w-screen-sm mx-auto relative bg-cover bg-center overflow-hidden"
       :style="{ backgroundImage: currentContent ? `url(/images/story_bg/${currentContent.background || 'story_default.png'})` : '' }"
     >
       <div class="flex flex-col justify-center items-center h-full relative">
-        <StoryComponent v-if="currentContent" :content="currentContent" class="p-6"/>
+        <StoryComponent v-if="currentContent" :content="currentContent" class="p-6" />
       </div>
-      
-      <!-- Loop through decorations and position each one -->
+
+      <!-- Loop through decorations and add classes for animations dynamically based on src -->
       <div
         v-if="currentContent && currentContent.decoration"
         v-for="(decoration, index) in currentContent.decoration"
         :key="index"
-        :data-decoration-src="decoration.src"
         :style="getDecorationStyle(decoration)"
         class="absolute decoration"
+        :class="`animate-${decoration.src.split('.')[0]}`"
       >
         <img :src="`/images/decoration/${decoration.src}`" :alt="decoration.src" />
       </div>
     </div>
+    <BGMusic />
   </div>
-  <BGMusic />
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue';
-import { gsap } from 'gsap';
+import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue';
+import gsap from 'gsap';
 import StoryComponent from '../components/StoryComponent.vue';
 import storyData from '@/story.json';
 
@@ -36,7 +36,7 @@ definePageMeta({
 
 const storyDataWithId = storyData.map((item, index) => ({
   ...item,
-  id: index, // generate id
+  id: index,
 }));
 
 const currentIndex = ref(0);
@@ -45,63 +45,77 @@ const nextContent = ref(null);
 
 onMounted(() => {
   currentContent.value = storyDataWithId[currentIndex.value];
+  animateDecorationsIn(); // Animate in decorations on initial load
   window.onbeforeunload = () => {
     return "ต้องการออกจากหน้านี้จริงๆหรอ";
   };
 });
 
-const nextStory = async () => {
-  const newIndex = (currentIndex.value + 1) % storyDataWithId.length;
-  nextContent.value = storyDataWithId[newIndex];
-
-  // Trigger animations for matching decorations
-  await animateMatchingDecorations();
-
-  // Set next content after animations are complete
-  setTimeout(() => {
-    currentIndex.value = newIndex;
-    currentContent.value = nextContent.value;
-    nextContent.value = null;
-  }, 500); // Adjust delay as needed
+const handleStoryClick = async () => {
+  await animateDecorationsOut(); // Wait for exit animation
+  nextStory();
+  animateDecorationsIn(); // Animate in decorations for the new story
 };
 
-// Function to animate decorations if they exist on both pages
-const animateMatchingDecorations = async () => {
-  if (!currentContent.value.decoration || !nextContent.value.decoration) return
+const nextStory = () => {
+  currentIndex.value = (currentIndex.value + 1) % storyDataWithId.length;
+  currentContent.value = storyDataWithId[currentIndex.value];
+};
 
-  // Wait for the next DOM update
-  await nextTick();
+// Reusable function to animate elements in from a specified direction
+const animateInFrom = (element, direction) => {
+  const startPosition = { opacity: 0 };
+  if (direction === 'top') startPosition.y = -200;
+  if (direction === 'bottom') startPosition.y = 200;
+  if (direction === 'left') startPosition.x = -200;
+  if (direction === 'right') startPosition.x = 200;
 
-  currentContent.value.decoration.forEach((currentDecoration) => {
-    const matchingDecoration = nextContent.value.decoration.find(
-      (nextDecoration) => nextDecoration.src === currentDecoration.src
-    );
+  gsap.fromTo(
+    element,
+    startPosition,
+    { x: 0, y: 0, opacity: 1, duration: 1, ease: 'power2.out' }
+  );
+};
 
-    if (matchingDecoration) {
-      // Log that animation will happen for the matched decoration
-      console.log(`Animating decoration ${currentDecoration.src} to new position and scale.`);
+// Reusable function to animate elements out to a specified direction
+const animateOutTo = (element, direction) => {
+  const endPosition = { opacity: 0 };
+  if (direction === 'top') endPosition.y = -200;
+  if (direction === 'bottom') endPosition.y = 200;
+  if (direction === 'left') endPosition.x = -200;
+  if (direction === 'right') endPosition.x = 200;
 
-      // Get current and target positions from decorations
-      const currentEl = document.querySelector(`[data-decoration-src='${currentDecoration.src}']`);
-      if (currentEl) { // Check if currentEl exists
-        const targetStyle = getDecorationStyle(matchingDecoration);
+  return gsap.to(element, { ...endPosition, duration: 1, ease: 'power2.in' });
+};
 
-        // Animate position and scale with GSAP
-        gsap.to(currentEl, {
-          x: targetStyle.left || 0,
-          y: targetStyle.top || 0,
-          scale: matchingDecoration.scale || 1,
-          duration: 1,
-          ease: "power2.inOut"
-        });
-      } else {
-        console.warn(`Decoration element for ${currentDecoration.src} not found.`);
-      }
+// Entrance Animation
+const animateDecorationsIn = async () => {
+  await nextTick(); // Ensure DOM updates
+
+  currentContent.value.decoration.forEach((decoration) => {
+    const element = document.querySelector(`.animate-${decoration.src.split('.')[0]}`);
+    if (element) {
+      const direction = decoration.animation?.in || 'bottom'; // Default to 'bottom' if not specified
+      animateInFrom(element, direction);
     }
   });
 };
 
-// Function to retrieve styles based on decoration position from JSON
+// Exit Animation
+const animateDecorationsOut = () => {
+  return new Promise((resolve) => {
+    const timeline = gsap.timeline({ onComplete: resolve });
+
+    currentContent.value.decoration.forEach((decoration) => {
+      const element = document.querySelector(`.animate-${decoration.src.split('.')[0]}`);
+      if (element) {
+        const direction = decoration.animation?.out || 'bottom'; // Default to 'bottom' if not specified
+        timeline.add(animateOutTo(element, direction), '<');
+      }
+    });
+  });
+};
+
 const getDecorationStyle = (decoration) => {
   const style = {
     position: 'absolute',
@@ -124,10 +138,6 @@ const getDecorationStyle = (decoration) => {
 };
 
 onBeforeUnmount(() => {
-  window.onbeforeunload = null; // Clean up the event listener
+  window.onbeforeunload = null;
 });
 </script>
-
-<style scoped>
-
-</style>

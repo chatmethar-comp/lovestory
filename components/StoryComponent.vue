@@ -25,6 +25,7 @@ const props = defineProps({
   justify-content: center;
   align-items: center;
   height: 100%;
+  z-index: 100;
 }
 
 .fade-enter-active, .fade-leave-active {

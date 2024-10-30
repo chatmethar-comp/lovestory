@@ -9,13 +9,55 @@
                 "position": {
                     "bottom": 0,
                     "left": 0
+                },
+                "animation": {
+                    "in": "bottom",
+                    "out": "bottom"
                 }
             },
             {
-                "src": "bl-flower-garden.png",
+                "src": "r-ripped-newspaper-1.png",
                 "position": {
                     "bottom": 0,
-                    "left": 0
+                    "right": 0
+                },
+                "animation": {
+                    "in": "bottom",
+                    "out": "bottom"
+                }
+            },
+            {
+                "src": "envelope_open-1.png",
+                "position": {
+                    "bottom": 240,
+                    "horizontal": "center",
+                    "width": "full"
+                },
+                "animation": {
+                    "in": "right",
+                    "out": "right"
+                }
+            },
+            {
+                "src": "b-flower-watercolor.png",
+                "position": {
+                    "bottom": 0,
+                    "horizontal": "center"
+                },
+                "animation": {
+                    "in": "bottom",
+                    "out": "bottom"
+                }
+            },
+            {
+                "src": "sun-doll.png",
+                "position": {
+                    "bottom": 240,
+                    "right": 0
+                },
+                "animation": {
+                    "in": "right",
+                    "out": "right"
                 }
             }
         ]
@@ -52,10 +94,6 @@
                 "position": {
                     "top": 0,
                     "left": 0
-                },
-                "animation": {
-                    "in": "left",
-                    "out": "top"
                 }
             }
         ]
@@ -123,13 +161,49 @@
         "type": "normal",
         "content": "เค้ารู้สึกสบายใจเวลาที่เราอยู่ด้วยกัน",
         "background": "story_default.png",
-        "decoration": []
+        "decoration": [
+            {
+                "src": "racing-tile.png",
+                "position": {
+                    "bottom": 0,
+                    "horizontal": "center",
+                    "width": "full"
+                },
+                "animation": {
+                    "in": "bottom",
+                    "out": "bottom"
+                }
+            },
+            {
+                "src": "smile-1.png",
+                "position": {
+                    "bottom": 240,
+                    "horizontal": "center"
+                },
+                "animation": {
+                    "in": "bottom",
+                    "out": "bottom"
+                }
+            }
+        ]
     },
     {
         "type": "normal",
         "content": "รู้สึกดีใจทุกครั้งที่เราได้คุยกัน",
         "background": "story_default.png",
-        "decoration": [],
+        "decoration": [
+            {
+                "src": "smile-1.png",
+                "position": {
+                    "bottom": 240,
+                    "horizontal": "center"
+                },
+                "animation": {
+                    "in": "bottom",
+                    "out": "bottom"
+                }
+            }
+        ],
         "quote": {
             "th": "ถ้าเธอเคยมาตอนบ่ายสี่โมง ประมาณบ่ายสามโมง ฉันก็จะเริ่มมีความสุข",
             "en": "you came at four o'clock in the afternoon, then at three o'clock I shall begin to be happy",
@@ -179,6 +253,17 @@
                 "position": {
                     "top": 0,
                     "width": "full"
+                },
+                "animation": {
+                    "in": "top",
+                    "out": "top"
+                }
+            },
+            {
+                "src": "moon.png",
+                "position": {
+                    "top": 115,
+                    "left": 91
                 },
                 "animation": {
                     "in": "top",

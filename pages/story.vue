@@ -126,6 +126,7 @@ const getDecorationStyle = (decoration) => {
   if (decoration.position.left !== undefined) style.left = `${decoration.position.left}px`;
   if (decoration.position.right !== undefined) style.right = `${decoration.position.right}px`;
   if (decoration.position.horizontal === 'center') {
+    console.log(decoration.src)
     style.left = '50%';
     style.transform = 'translateX(-50%)';
   }

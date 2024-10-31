@@ -54,8 +54,12 @@ const handleStoryClick = async () => {
 };
 
 const nextStory = () => {
-  currentIndex.value = (currentIndex.value + 1) % storyDataWithId.length;
-  currentContent.value = storyDataWithId[currentIndex.value];
+  currentIndex.value = (currentIndex.value + 1);
+  if (currentIndex.value == storyDataWithId.length) {
+    navigateTo('/confess')
+  } else {
+    currentContent.value = storyDataWithId[currentIndex.value];
+  }
 };
 
 // Reusable function to animate elements in from a specified direction

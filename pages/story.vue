@@ -11,8 +11,8 @@
       <!-- Loop through decorations and add classes for animations dynamically based on src -->
       <div
         v-if="currentContent && currentContent.decoration"
-        v-for="(decoration, index) in currentContent.decoration"
-        :key="index"
+        v-for="(decoration) in currentContent.decoration"
+        :key="decoration.src"
         :style="getDecorationStyle(decoration)"
         class="absolute decoration"
         :class="`animate-${decoration.src.split('.')[0]}`"
@@ -88,29 +88,36 @@ const animateOutTo = (element, direction) => {
 const animateDecorationsIn = async () => {
   await nextTick(); // Ensure DOM updates
 
-  currentContent.value.decoration.forEach((decoration) => {
-    const element = document.querySelector(`.animate-${decoration.src.split('.')[0]}`);
-    if (element) {
-      const direction = decoration.animation?.in || 'bottom'; // Default to 'bottom' if not specified
-      animateInFrom(element, direction);
-    }
-  });
+  if (currentContent.value && currentContent.value.decoration && currentContent.value.decoration.length) {
+    currentContent.value.decoration.forEach((decoration) => {
+      const element = document.querySelector(`.animate-${decoration.src.split('.')[0]}`);
+      if (element) {
+        const direction = decoration.animation?.in || 'bottom'; // Default to 'bottom' if not specified
+        animateInFrom(element, direction);
+      }
+    });
+  } 
 };
 
 // Exit Animation
 const animateDecorationsOut = () => {
   return new Promise((resolve) => {
-    const timeline = gsap.timeline({ onComplete: resolve });
+    if (currentContent.value && currentContent.value.decoration && currentContent.value.decoration.length) {
+      const timeline = gsap.timeline({ onComplete: resolve });
 
-    currentContent.value.decoration.forEach((decoration) => {
-      const element = document.querySelector(`.animate-${decoration.src.split('.')[0]}`);
-      if (element) {
-        const direction = decoration.animation?.out || 'bottom'; // Default to 'bottom' if not specified
-        timeline.add(animateOutTo(element, direction), '<');
-      }
-    });
+      currentContent.value.decoration.forEach((decoration) => {
+        const element = document.querySelector(`.animate-${decoration.src.split('.')[0]}`);
+        if (element) {
+          const direction = decoration.animation?.out || 'bottom'; // Default to 'bottom' if not specified
+          timeline.add(animateOutTo(element, direction), '<');
+        }
+      });
+    } else {
+      resolve(); // Immediately resolve if no decorations
+    }
   });
 };
+
 
 const getDecorationStyle = (decoration) => {
   const style = {};
@@ -118,8 +125,16 @@ const getDecorationStyle = (decoration) => {
   if (decoration.position.bottom !== undefined) style.bottom = `${decoration.position.bottom}px`;
   if (decoration.position.left !== undefined) style.left = `${decoration.position.left}px`;
   if (decoration.position.right !== undefined) style.right = `${decoration.position.right}px`;
-  if (decoration.position.horizontal === 'center') style.left = '50%';
-  if (decoration.position.vertical === 'center') style.top = '50%';
+  if (decoration.position.horizontal === 'center') {
+    style.left = '50%';
+    style.transform = 'translateX(-50%)';
+  }
+  if (decoration.position.vertical === 'center') {
+    style.top = '50%';
+    style.transform = style.transform
+      ? `${style.transform} translateY(-50%)`
+      : 'translateY(-50%)';
+  }
   if (decoration.position.width === 'full') style.width = '100%';
   return style;
 };

@@ -53,7 +53,7 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useCookie } from '#app'; // Assuming you're using Nuxt
 
-const correctPassword = '1290';
+const correctPassword = '3000'; // for demo halloween night
 
 const inputValues = ref(['', '', '', '']);
 const showWarning = ref(false); // To show warning for incorrect passcode

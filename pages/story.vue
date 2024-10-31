@@ -5,7 +5,7 @@
       :style="{ backgroundImage: currentContent ? `url(/images/story_bg/${currentContent.background || 'story_default.png'})` : '' }"
     >
       <div class="flex flex-col justify-center items-center h-full relative">
-        <StoryComponent v-if="currentContent" :content="currentContent" class="p-6" />
+        <StoryComponent v-if="currentContent" :content="currentContent" class="p-6 z-20" />
       </div>
 
       <!-- Loop through decorations and add classes for animations dynamically based on src -->

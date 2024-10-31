@@ -15,7 +15,7 @@
         <div class="relative w-fit h-auto">
           <img :src="envelope" alt="Letter" class="w-fit h-auto"/>
           <img :src="waxSeal" alt="Wax" class="absolute top-32 left-36 w-fit h-auto"/>
-          <img :src="toSeal" alt="To" class="absolute top-28 left-40 w-fit h-auto"/>
+          <!-- <img :src="toSeal" alt="To" class="absolute top-28 left-40 w-fit h-auto"/> -->
         </div>
       </div>
 

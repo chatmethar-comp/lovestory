@@ -1,7 +1,7 @@
 [
     {
         "type": "normal",
-        "content": "สวัสดีแพนเค้ก<br>เป็นยังไงบ้าง<br>",
+        "content": "xxxx<br>เป็นยังไงบ้าง<br>",
         "background": "story_default.png",
         "decoration": [
             {
@@ -64,7 +64,7 @@
     },
     {
         "type": "normal",
-        "content": "เค้าเจอเด็กผู้หญิงคนนึงจากงานแข่ง<br>ถึงในงานเราก็ไม่ได้คุยกันมาก",
+        "content": "เค้าเจอเด็กxxxจากงานแข่ง<br>ถึงในงานเรxxxได้คุยกันมาก",
         "background": "story_default.png",
         "decoration": [
             {
@@ -211,7 +211,7 @@
     },
     {
         "type": "normal",
-        "content": "แพนเค้กเป็น supporter ที่ดีมากๆ<br>เป็นผู้สร้างกำลังใจให้เค้ามาตลอด",
+        "content": "xxxxเป็น supporter ที่ดีมากๆ<br>เป็นผู้สร้างกำลังใจให้เค้ามาตลอด",
         "background": "story_default.png",
         "decoration": [
             {
@@ -230,7 +230,7 @@
     },
     {
         "type": "normal",
-        "content": "เวลาเค้าเจอวันแย่ๆมา<br>แค่ได้คุยกับแพนเค้กก็รู้สึกว่า<br>วันนั้นกลายเป็นวันที่สดใสขึ้นมาทันที",
+        "content": "เวลาเค้าเจอวันแย่ๆมา<br>แค่ได้คุยกับxxxxก็รู้สึกว่า<br>วันนั้นกลายเป็นวันที่สดใสขึ้นมาทันที",
         "background": "story_default.png",
         "decoration": [
             {
@@ -286,177 +286,5 @@
                 }
             }
         ]
-    },
-    {
-        "type": "normal",
-        "content": "ถึงจริงๆ แพนเค้กเป็นเพียง<br>เด็กผู้หญิงตัวเล็กๆธรรมดาคนนึง<br>เหมือนกับเด็กหญิงคนอื่นๆทั่วไป​<br>ไม่ได้พิเศษกว่าใคร",
-        "background": "story_default.png",
-        "decoration": []
-    },
-    {
-        "type": "normal",
-        "content": "ไม่ได้ดูน่ารักกว่าหรือเก่งกว่าคนอื่น",
-        "background": "story_default.png",
-        "decoration": []
-    },
-    {
-        "type": "normal",
-        "content": "และเค้าก็เป็นแค่เด็กคนนึง เหมือนกับคนอื่นๆ",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "เค้าไม่จำเป็นต้องมีแพนเค้ก<br>และแพนเค้กก็ไม่จำเป็นต้องมีเค้า",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "แต่เมื่อเราได้รู้จักกัน<br>ใกล้ชิดกัน ได้คุยกัน",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "สำหรับเค้า<br>แพนเค้กจะเป็นคนพิเศษในโลกทั้งใบ<br>และไม่มีใครมาแทนที่ได้",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "2022 เราเคยไปงานคริสต์มาสด้วยกัน<br>ที่ Central World",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "เค้าไม่เคยสนใจเทศกาลคริสต์มาสมาก่อน<br>งานฉลองพวกนั้นนั้นดูไร้สาระ",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "เค้าเดินเล่นที่ลานคริสต์มาส<br>มองดูต้นคริสต์มาสต้นใหญ่สวยงาม<br>กับของตกแต่งสวยงามไร้สาระมากมาย",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "แต่หลังจากที่เราเจอกันวันนั้น<br>ถึงจะเจอกันไม่นาน",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "เค้าก็มองคริสต์มาสไม่เหมือนเดิมอีกเลย มันกลายเป็นเทศกาลที่อบอุ่นมากๆ",
-        "background": "story_default.png",
-        "quote": {
-            "th": "",
-            "en": "You come with the color",
-            "by": ""
-        }
-    },
-    {
-        "type": "normal",
-        "content": "เค้าเป็นที่คิดมาก ขี้น้อยใจ ชอบคิดไปเอง<br>และก็เคยงอนแพนเค้ก",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "มีหลายๆครั้งที่เค้าอาจจะทำให้แพนเค้กรู้สึกไม่ดี<br>หรือต้องมารบกวน<br>ขอโทษนะ",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "ตอนไปเที่ยวด้วยกันด้วยกันล่าสุด<br>เราไปดู inside out ด้วยกัน<br>ไปแบบไม่มีแพลนอะไร",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "เรานัดกันตอน ~12.25",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "จริงๆ แล้ววันนั้นเค้ามีสอบ 10.00 - 11.30",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "เค้าออกจากห้องสอบก่อนครึ่งชั่วโมง<br>ออกจากห้องคนแรก<br>เพื่อนยังนั่งทำกันจริงจรังอยู่เลย<br>เพื่อที่จะเดินทางให้ทันตามเวลาที่เรานัด",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "เค้าซื้อตั๋วหนังให้ก่อน<br>แล้วแพนเค้กก็มาถึงประมาน ~14.05<br>เราเดินกันไปคุยไปจนถึงโรงหนัง<br>แล้วแพนเค้กก็ฉีกตั๋วที่ปรินท์มาต่อกัน...",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "แพนเค้กเอาแต่เล่นโทรศัพท์",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "เราต่างเอาแต่ถึงเรื่องของตัวเอง",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "...",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "เค้ารู้สึกว่าตัวเองไม่ได้สำคัญกับแพนเค้ก",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "ถึงเราจะเคลียร์กันแล้วบางอย่าง",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "เค้ายอมรับคำขอโทษนั้น",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "แต่แล้วเค้าก็เศร้า<br>เค้าตั้งคำถามกับหลายๆ อย่างที่เกิดขึ้น<br>เค้าทำอะไรผิดไปรึเปล่า",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "เค้าคิดว่านี่อาจจะเป็นครั้งสุดท้ายเราจะได้เจอกันรึเปล่า",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "ผ่านมาเรื่อยๆ เค้าหายเศร้า เค้าหายโกรธ",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "และก็แปลก <br>เค้ากลับอยากเจอแพนเค้กที่เคยทำเค้าเศร้าอีก<br>แต่มันก็ไม่เหมือนเดิมอีกแล้ว",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "ตอนอยู่ฝรั่งเศสยังบอกว่าอยากเจอกัน<br>อยากกินข้าวด้วยกัน แต่หลังจากนั้น<br>แต่ละครั้งที่เค้าชวน<br>เราก็ไม่ได้กินข้าวด้วยกันสักครั้งเลยนะ",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "เค้าไม่รู้แล้วว่าแต่ละครั้งที่ทักมาต้องการอะไรกันแน่<br>(หรืออาจไม่เคยรู้)<br>เธอจะดีหรือเธอจะร้าย",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "ข้อความ “555” มันไม่รู้สึกเหมือนเดิมอีกแล้ว555..🥲",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "เค้าเลยอยากส่งจดหมายฉบับนี้มา<br>เพื่อสื่อสารสิ่งที่อยู่ใจเค้าจริงๆออกมา",
-        "background": "story_default.png"
-    },
-    {
-        "type": "normal",
-        "content": "แล้วก็มีอีกอย่าง...",
-        "background": "story_default.png"
     }
 ]
